@@ -1,5 +1,6 @@
 <template>
-    <main class="bg-gradient-to-tl from-green-700 to bg-green-400 h-screen overflow-y-auto">
+    <main
+        class="inline-flex flex-col items-center bg-gradient-to-tl from-green-700 to bg-green-400 h-screen w-screen overflow-x-hidden overflow-y-auto">
 
         <nav class="inline-flex w-screen h-12 md:h-20 shadow-lg mb-6">
 
@@ -35,28 +36,36 @@
             </ul>
 
         </nav>
-        <div class="inline-flex md:flex-col flex-wrap h-3/4 w-full">
-            <div
-                class="inline-flex flex-col gap-12 bg-slate-500 rounded-md w-3/4 md:w-1/2 mx-auto h-full shadow-lg text-center text-white font-bold md:text-2xl p-6">
-                <h1 class="text-3xl">Şikayetinizi eklerken dikkat etmeniz gerekenler
-                    <hr class="mx-auto bg-slate-300 rounded-lg h-1 mt-2 w-10/12">
-                </h1>
-                <h1 class="hover:tracking-widest duration-150">Cümlelerinizin açık ve anlaşılır olmasına dikkat edin.
-                </h1>
-                <h1 @mouseover="isVisible = !isVisible">Yazım ve imla kurallarına uymaya özen göserin. <span
-                        v-if="isVisible">.!?</span></h1>
-                <h1>Lorem ipsum dolor sit amet consectetur.</h1>
 
+        <div
+            class="inline-flex flex-col gap-12 bg-slate-500 rounded-md w-screen md:w-11/12 h-fit shadow-lg text-center text-white font-bold md:text-2xl mb-8 p-6">
+            <h1 class="text-3xl">Şikayetinizi eklerken dikkat etmeniz gerekenler
+                <hr class="mx-auto bg-slate-300 rounded-lg h-1 mt-2 w-10/12">
+            </h1>
+            <h1 class="hover:tracking-widest duration-150">Cümlelerinizin açık ve anlaşılır olmasına dikkat edin.
+            </h1>
+            <h1 @mouseover="isVisible = !isVisible">Yazım ve imla kurallarına uymaya özen göserin. <span
+                    v-if="isVisible">.!?</span></h1>
+            <h1>Lorem ipsum dolor sit amet consectetur.</h1>
+            <h1>Lorem ipsum dolor sit amet consectetur.</h1>
+            <h1>Lorem ipsum dolor sit amet consectetur.</h1>
 
-            </div>
-
-            <div class=" inline-flex flex-col gap-12 bg-white opacity-60 rounded-md w-3/4 mx-auto h-full  text-slate-800 md:text-2xl font-bold p-6">
-                <h1 class="">Şikayet başlığı: </h1>
-                <input class="border-2 rounded-md w-3/5 border-black" type="text">
-
-            </div>
 
         </div>
+
+        <div
+            class=" inline-flex flex-col gap-12 bg-white opacity-70 rounded-md w-11/12 h-fit text-slate-800 md:text-2xl font-bold mb-6 p-6">
+            <h1 class="">Şikayet başlığı: </h1>
+            <input class=" border-4 rounded-md w-2/5 border-slate-400" placeholder="Maksimum oniki kelime yazın."
+                type="text">
+            <h1>Şikayetçi olduğunuz firmanın adı:</h1>
+            <input class=" border-4 rounded-md w-2/5 border-slate-400" type="text">
+            <h1>Şikayetinizin içeriği:</h1>
+            <textarea class=" border-4 rounded-md w-3/5 h-40 border-slate-400" type="text"
+                placeholder="300 karakteri geçmeyecek şekilde şikayetinizi yazınız." maxlength="300"></textarea>
+            <button class="h-fit ml-auto bg-slate-300 rounded-lg p-2" type="submit">Gönder</button>
+        </div>
+
     </main>
 
 </template>
