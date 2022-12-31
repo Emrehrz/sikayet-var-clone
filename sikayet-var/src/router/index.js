@@ -13,7 +13,7 @@ const routes = [
     component: () => import(/* webpackChunkName: "addComp" */ '../views/addCompView.vue')
   },
   {
-    path: '/sing-in-up',
+    path: '/sign-in-up',
     name: 'login-register',
     component: () => import(/* webpackChunkName: "sing-in-up" */ '../views/logRegView.vue')
   },
