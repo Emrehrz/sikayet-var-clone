@@ -45,7 +45,7 @@
                     <router-link to="/addComp">Şikayet Yaz</router-link>
                 </li>
 
-                
+
             </ul>
         </nav>
 
@@ -91,7 +91,7 @@
 
         <div v-if="compVis" class="">
             <div
-                class="inline-flex ml-8 w-10/12 md:w-8/12 md:h-56 border-2 md:ml-52  bg-green-500 font-semibold border-white mb-6 rounded-lg gap-4 shadow-lg">
+                class="inline-flex ml-8 w-10/12 md:w-8/12 h-fit border-2 md:ml-52  bg-blue-400 font-semibold border-white mb-6 rounded-lg gap-4 shadow-lg">
 
                 <div class="w-3/12 mx-auto ml-2 md:ml-2 ">
                     <img class="w-36 rounded-lg ml-0 m-2" src="../assets/1.jpg" alt="">
@@ -99,9 +99,9 @@
                     <h2 class="">11/12/2022</h2>
                 </div>
 
-                <div class="bg-white max-h-56 inline-flex flex-col w-auto my-auto h-64 rounded-lg opacity-90">
+                <div class="bg-white h-fit inline-flex flex-col w-auto my-auto rounded-lg opacity-90 overflow-y-auto">
                     <h1 class="mt-4 ml-4 md:mx-auto font-bold md:text-xl">Şikayetçiyim Lorem ipsum dolor sit amet.</h1>
-                    <p class=" w-8/12 max-h-52 mt-4 mx-auto md:overflow-hidden overflow-y-scroll  text-black ">Lorem
+                    <p class=" w-8/12 max-h-52 h-fit mt-4 mx-auto md:overflow-hidden  text-black ">Lorem
                         ipsum dolor
                         sit, amet consectetur adipisicing
                         elit. Doloremque voluptas accusamus, porro beatae
@@ -115,10 +115,27 @@
                         <h1 class="text-slate-600"> <span>Çözüm bekliyor... </span> <span
                                 class="hidden md:inline-block">/</span>
                             Turkcell</h1>
+
+                    </div>
+                    <div class="inline-flex flex-col gap-4 w-full  px-2 ">
+                        <button @click="answeredVis = true, compVis = false"
+                            class="rounded-lg p-2 bg-slate-600 hover:bg-slate-500 ml-auto">Şikayeti cevapla</button>
+                        <button @click="closedVis = true, compVis = false"
+                            class="rounded-lg p-2 bg-blue-600 hover:bg-blue-500 ml-auto ">Şikayeti kapat vb.</button>
+
                     </div>
                 </div>
             </div>
-
+        </div>
+        <div v-if="answeredVis"
+            class="flex flex-col gap-4 mx-auto w-fit p-12 bg-white rounded-lg border-slate-500 border-4 font-bold text-xl ">
+            <h1>Şikayet başarıyla cevaplanmıştır.</h1>
+            <button @click="answeredVis = false" class="w-fit p-2 bg-blue-500 rounded-lg ml-auto">Kapat</button>
+        </div>
+        <div v-if="closedVis"
+            class="flex flex-col gap-4 mx-auto w-fit p-12 bg-white rounded-lg border-black border-2 font-bold text-xl ">
+            <h1>Şikayet başarıyla kapatılmıştır.</h1>
+            <button @click="closedVis = false" class="w-fit p-2 bg-blue-500 rounded-lg ml-auto">Kapat</button>
         </div>
     </main>
 </template>

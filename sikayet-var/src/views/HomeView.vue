@@ -61,7 +61,7 @@
       v-for="sikayet in filteredItems" :key="sikayet.code">
 
       <div class="w-3/12 mx-auto ml-2 md:ml-2 ">
-        <img class="w-36 rounded-lg ml-0 m-2" src="../assets/1.jpg"  >
+        <img class="w-36 rounded-lg ml-0 m-2" src="../assets/1.jpg">
         <h2 class="">{{ sikayet.name }}</h2>
         <h2 class="">{{ sikayet.date }}</h2>
       </div>
@@ -72,18 +72,15 @@
           sit, amet consectetur adipisicing
           elit. Doloremque voluptas accusamus, porro beatae
           recusandae architecto sit suscipit, laudantium commodi praesentium odio enim placeat voluptate assumenda
-          mollitia inventore nihil, impedit magni!</p>  
+          mollitia inventore nihil, impedit magni!</p>
         <div class="inline-flex md:gap-2 ml-8 mr-auto mt-4 md:mt-auto mb-2 relative w-fit ">
-          <div class="text-center inline-flex md:w-6 md:h-6 shadow-lg rounded-md bg-red-500">
-            <i class="far fa-chart-bar "></i>
+          <div class="text-center inline-flex md:w-6 md:h-6 shadow-lg rounded-md bg-red-500 ">
           </div>
           <h1 class="text-slate-600"> <span>Çözüm bekliyor... </span> <span class="hidden md:inline-block">/</span>
             Turkcell</h1>
         </div>
       </div>
     </div>
-
-
   </main>
 
 </template>
@@ -101,7 +98,7 @@ export default {
       photos: [],
       searchPayload: '',
     }
-     
+
   },
   watch: {
     searchPayload: function () {

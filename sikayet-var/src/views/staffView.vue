@@ -3,10 +3,8 @@
 
         <nav class="inline-flex w-full h-12 md:h-20 shadow-lg mb-6">
 
-            <h1 class=" text-emerald-900 m-4 text-md md:text-2xl font-extrabold "><router-link
-                    to="/staff">Şikayet
-                    Var
-                </router-link></h1>
+            <h1 class=" text-emerald-900 m-4 text-md md:text-2xl font-extrabold ">Şikayet
+                Var</h1>
 
         </nav>
 
@@ -54,7 +52,7 @@
 
         <div v-if="compVis" class="">
             <div
-                class="inline-flex ml-8 w-10/12 md:w-8/12 md:h-56 border-2 md:ml-52  bg-blue-400 font-semibold border-white mb-6 rounded-lg gap-4 shadow-lg">
+                class="inline-flex ml-8 w-10/12 md:w-8/12 h-fit border-2 md:ml-52  bg-blue-400 font-semibold border-white mb-6 rounded-lg gap-4 shadow-lg">
 
                 <div class="w-3/12 mx-auto ml-2 md:ml-2 ">
                     <img class="w-36 rounded-lg ml-0 m-2" src="../assets/1.jpg" alt="">
@@ -62,7 +60,7 @@
                     <h2 class="">11/12/2022</h2>
                 </div>
 
-                <div class="bg-white max-h-56 inline-flex flex-col w-auto my-auto h-64 rounded-lg opacity-90 overflow-y-auto">
+                <div class="bg-white h-fit inline-flex flex-col w-auto my-auto rounded-lg opacity-90 overflow-y-auto">
                     <h1 class="mt-4 ml-4 md:mx-auto font-bold md:text-xl">Şikayetçiyim Lorem ipsum dolor sit amet.</h1>
                     <p class=" w-8/12 max-h-52 h-fit mt-4 mx-auto md:overflow-hidden  text-black ">Lorem
                         ipsum dolor
@@ -80,25 +78,41 @@
                             Turkcell</h1>
 
                     </div>
-                    <div class= "bg-slate-200 mx-auto w-full ">
-                        <h1 class="m-auto mb-4" >Şikayeti cevaplama:</h1>
-                        <input class="rounded-lg m-auto mb-4" type="text" name="" id="">
-                        <button class="rounded-lg p-2 bg-slate-600 mb-4">Şikayeti cevapla</button>
+                    <div class="bg-slate-200 mx-auto w-full px-2 ">
+                        <h1 class="m-auto mt-4 mb-4">Şikayeti cevaplama:</h1>
+                        <div class="inline-flex gap-8 flex-row w-full">
+                            <textarea class="w-3/5 border-2 border-slate-600 h-1/3 rounded-lg"></textarea>
+                            <button @click="answeredVis = true, compVis= false" class="rounded-lg p-2 bg-slate-600 hover:bg-slate-500 ">Şikayeti cevapla</button>
+                            <button @click="closedVis = true, compVis= false" class="rounded-lg p-2 bg-blue-600 hover:bg-blue-500 ">Şikayeti kapat vb.</button>
+                        </div>
+
                     </div>
                 </div>
             </div>
-
+        </div>
+        <div v-if="answeredVis" class="flex flex-col gap-4 mx-auto w-fit p-12 bg-white rounded-lg border-slate-500 border-4 font-bold text-xl ">
+            <h1>Şikayet başarıyla cevaplanmıştır.</h1>
+            <button  @click="answeredVis=false" class="w-fit p-2 bg-blue-500 rounded-lg ml-auto">Kapat</button>
+        </div>
+        <div v-if="closedVis" class="flex flex-col gap-4 mx-auto w-fit p-12 bg-white rounded-lg border-black border-2 font-bold text-xl ">
+            <h1>Şikayet başarıyla kapatılmıştır.</h1>
+            <button @click="closedVis=false" class="w-fit p-2 bg-blue-500 rounded-lg ml-auto">Kapat</button>
         </div>
     </main>
 </template>
 
 <script>
 import { Ref } from 'vue';
+import * as data from "./sikayetler"
+
 
 export default {
     data() {
         return {
             compVis: false,
+            answeredVis: false,
+            closedVis: false,
+            sikayetler: data.sikayetler
         }
     }
 

@@ -5,7 +5,8 @@ export const sikayetler = [
         code: '1',
         date: '30/09/2022',
         name: 'Mustafa Sekmez',
-        photo: '1'
+        photo: '1',
+        status: true
     },
     {
         title: 'Facebook verilerimi çaldı.',
@@ -13,7 +14,8 @@ export const sikayetler = [
         code: '2',
         date: '20/01/2022',
         name: 'Ali Yıldırım',
-        photo: '2'
+        photo: '2',
+        status: false
     },
     {
         title: 'Gediz elektrik faturalarımı şişiriyor.',
@@ -21,7 +23,8 @@ export const sikayetler = [
         code: '3',
         date: '3/02/2022',
         name: 'Vahit Guetta',
-        photo: '3'
+        photo: '3',
+        status: false
     },
     {
         title: 'Turktelekom altyapısı rezalet.',
@@ -29,7 +32,8 @@ export const sikayetler = [
         code: '4',
         date: '10/07/2022',
         name: 'Kemal Öztürk',
-        photo: '4'
+        photo: '4',
+        status: true
     }
 
 ]
